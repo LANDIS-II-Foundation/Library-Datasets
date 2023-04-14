@@ -137,7 +137,10 @@ namespace Landis.Extensions
                     if (! string.IsNullOrEmpty(AssemblyName))
                         implementationName = implementationName + "," + AssemblyName;
                 }
-                return new Landis.Core.ExtensionInfo(Name, extensionType, implementationName);
+                string version = "0";
+                if (!string.IsNullOrEmpty(Version))
+                    version = Version;
+                return new Landis.Core.ExtensionInfo(Name, extensionType, implementationName, version);
             }
         }
 
